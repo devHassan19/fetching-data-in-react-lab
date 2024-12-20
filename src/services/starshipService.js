@@ -1,16 +1,19 @@
 const BASE_URL = 'https://swapi.py4e.com/api/starships'
 
-const search = async () => {
+const search = async (name) => {
   try {
     const URL = `${BASE_URL}`
     const response = await fetch(URL)
     const data = await response.json()
-    console.log(data)
 
-    return data
+    const starship = data.results.find(
+      (starship) => starship.name.toLowerCase() === name.toLowerCase()
+    )
+
+    return starship || null
   } catch (err) {
-    console.log(err)
+    console.error(err)
   }
 }
-search('CR90 corvette')
+
 export { search }

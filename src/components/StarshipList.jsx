@@ -1,27 +1,22 @@
+import React from 'react'
 import StarshipCard from './StarshipCard'
+import '../App.css'
+const StarshipList = ({ starships }) => {
+  if (starships.length === 0) {
+    return <div>No starships found</div>
+  }
 
-import { search } from '../services/starshipService'
+  return (
+    <section>
+      <ul>
+        {starships.map((starship) => (
+          <li>
+            <StarshipCard key={starship._id} starship={starship} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
 
-// const fetchData = async () => {
-//   const data = await starshipService.search()
-//   const newStarshipSearch = {
-//     name: data.name,
-//     Class: data.class,
-//     Manufacturer: data.manufacturer,
-//     model : data.model
-
-//   }
-//   setSt(newWeatherState)
-// }
-
-// const TodoList = ({ todos }) => {
-//   return (
-//     <ul>
-//       {todos.map((todo, index) => (
-//         <li key={index}>{todo}</li>
-//       ))}
-//     </ul>
-//   )
-// }
-
-// export default TodoList
+export default StarshipList

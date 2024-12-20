@@ -1,6 +1,6 @@
 import { useState } from 'react'
-
-const StarShipsSearch = ({ fetchData }) => {
+import '../App.css'
+const StarshipSearch = ({ fetchData }) => {
   const [ship, setShip] = useState('')
 
   const handleSubmit = (e) => {
@@ -10,7 +10,7 @@ const StarShipsSearch = ({ fetchData }) => {
   }
 
   return (
-    <section>
+    <main>
       <h2>Search</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="ship">Search Term:</label>
@@ -22,8 +22,8 @@ const StarShipsSearch = ({ fetchData }) => {
         />
         <button type="submit">Search</button>
       </form>
-    </section>
+    </main>
   )
 }
 
-export default StarShipsSearch
+export default StarshipSearch

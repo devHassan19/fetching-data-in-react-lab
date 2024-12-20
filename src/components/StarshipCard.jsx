@@ -1,12 +1,13 @@
-const StarshipCard = ({ starShips }) => {
-  console.log('starshipCard props:', starShips)
+import React from 'react'
+
+const StarshipCard = ({ starship }) => {
   return (
-    <section>
-      {/* <h2>{shipCard.name}</h2> */}
-      <p>Class: {starShips.class}</p>
-      <p>Manufacturer: {starShips.manufacturer}</p>
-      <p>Model: {starShips.model}</p>
-    </section>
+    <div>
+      <h3>{starship.name}</h3>
+      <p>Class: {starship.starship_class}</p>
+      <p>Manufacturer: {starship.manufacturer}</p>
+      <p>Model: {starship.model}</p>
+    </div>
   )
 }
 
